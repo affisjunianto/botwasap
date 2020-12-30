@@ -1122,9 +1122,9 @@ if (messageType == 'imageMessage')
          {
             exec
          } = require("child_process");
-         exec('cwebp -q 50 ' + stiker + ' -o temp/' + jam + '#webp', (error, stdout, stderr) =>
+         exec('cwebp -q 50 ' + stiker + ' -o temp/' + jam + '.webp', (error, stdout, stderr) =>
          {
-            let stik = fs.readFileSync('temp/' + jam + '#webp')
+            let stik = fs.readFileSync('temp/' + jam + '.webp')
             conn.sendMessage(id, stik, MessageType.sticker, { quoted: m })
          });
       }
@@ -1345,7 +1345,7 @@ if (text.includes("#pokemon"))
     },function(error, response, body){
         let $ = cheerio.load(body);
       var y = $.html().split('<b>KECOCOKAN JODOH BERDASARKAN NAMA PASANGAN</b><br><br>')[1];
-        var t = y.split('#<br><br>')[1];
+        var t = y.split('.<br><br>')[1];
         var f = y.replace(t ," ");
         var x = f.replace(/<br\s*[\/]?>/gi, "\n");
         var h  = x.replace(/<[^>]*>?/gm, '');
@@ -1692,7 +1692,7 @@ if (text.includes("#ytmp4"))
             }
             var os = new os_func();
 
-            os.execCommand('ytdl ' + url + ' -q highest -o mp4/' + videoid[1] + '#mp4').then(res =>
+            os.execCommand('ytdl ' + url + ' -q highest -o mp4/' + videoid[1] + '.mp4').then(res =>
             {
 		const buffer = fs.readFileSync("mp4/"+ videoid[1] +"#mp4")
                conn.sendMessage(id, buffer, MessageType.video)
@@ -1882,19 +1882,19 @@ if (text.includes('#ttp')){
     })
 }
 else if (text == '#hello1'){
-let hasil = fs.readFileSync('mp3/' + 'PTT' + '#wav')
+let hasil = fs.readFileSync('mp3/' + 'PTT' + '.wav')
  conn.sendMessage(id, hasil, MessageType.audio, { quoted: m } )
 }
 if (text.includes("test")){
-let err = fs.readFileSync('mp3/' + 'test' + '#mav')
+let err = fs.readFileSync('mp3/' + 'test' + '.mav')
  conn.sendMessage(id, err, MessageType.audio, { quoted: m })
 }
 if (text.includes("salam")){
-let err = fs.readFileSync('mp3/' + 'salam' + '#mp3')
+let err = fs.readFileSync('mp3/' + 'salam' + '.mp3')
  conn.sendMessage(id, err, MessageType.audio, { ptt: true })
 }
 if (text.includes("tariksis")){
-let err = fs.readFileSync('mp3/' + 'tariksis' + '#wav')
+let err = fs.readFileSync('mp3/' + 'tariksis' + '.wav')
  conn.sendMessage(id, err, MessageType.audio, { ptt: true, quoted: m })
 }
 if (text.includes('bot')) {
@@ -1906,23 +1906,23 @@ if (text.includes('bot')) {
  conn.sendMessage(id, options, MessageType.text, { quoted: m })
 }
 if (text.includes("desah")){
-let err = fs.readFileSync('mp3/' + 'desah' + '#wav')
+let err = fs.readFileSync('mp3/' + 'desah' + '.wav')
  conn.sendMessage(id, err, MessageType.audio, { ptt: true, quoted: m })
 }
 if (text.includes("iri")){
-let err = fs.readFileSync('mp3/' + 'iri' + '#mp3')
+let err = fs.readFileSync('mp3/' + 'iri' + '.mp3')
  conn.sendMessage(id, err, MessageType.audio, { ptt: true, quoted: m })
 }
 else if (text == 'baka'){
-let hasil = fs.readFileSync('mp3/' + 'baka' + '#wav')
+let hasil = fs.readFileSync('mp3/' + 'baka' + '.wav')
  conn.sendMessage(id, hasil, MessageType.audio, { quoted: m } )
 }
 else if (text == 'pttt'){
-let hasil = fs.readFileSync('mp3/' + 'pttt' + '#pttt')
+let hasil = fs.readFileSync('mp3/' + 'pttt' + '.pttt')
  conn.sendMessage(id, hasil, MessageType.audio, { quoted: m } )
 }
 else if (text == 'goblok'){
-let hasil = fs.readFileSync('mp3/' + 'goblok' + '#wav')
+let hasil = fs.readFileSync('mp3/' + 'goblok' + '.wav')
  conn.sendMessage(id, hasil, MessageType.audio, { quoted: m } )
 }
 if (text.includes("#alay")){
